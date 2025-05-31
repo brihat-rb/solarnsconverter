@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Solar Nepal Sambat Converter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="./index.css" />
   </head>
 
   <body>
-    <i id="datetime"></i>
+    <i id="dt"></i>
     <div id="header">
       <h2>Solar Nepal Sambat Converter</h2>
       <span id="author">brihat (reachme@brihatrb.com.np)</span>
@@ -20,22 +21,23 @@
 
     <div id="main" align="center">
       <h3>Solar NS/AD Date Converter</h3>
-      <div id="ns_ad_converter">
-        <div id="ns_to_ad">
-          <div id="ns_to_ad_input">NS:
-            <select id="select_year_ns_to_ad" onchange="w3();"></select>
-            <select id="select_month_ns_to_ad" onchange="w3();"></select>
-            <select id="select_date_ns_to_ad"></select>
-            <button id="button_ns_to_ad" onclick="D3();">GET AD</button>
+      <div id="nac">
+        <div id="n2a">
+          <div id="n2a_i">NS:
+            <select id="select_yn2a" onchange="w3();"></select>
+            <select id="select_mn2a" onchange="w3();"></select>
+            <select id="select_dn2a"></select>
+            <button id="button_n2a" onclick="D3();">GET AD</button>
           </div>
-          <div id="ns_to_ad_result">AD here</div>
+          <div id="n2a_r">AD here</div>
         </div>
 
-        <div id="ad_to_ns">
-          <div id="ad_to_ns_input" class="input">AD: <input type="date" id="ad_date_to_ns" />
-            <button id="button_ad_to_ns" onclick="v3();">GET NS</button>
+        <div id="a2n">
+          <div id="a2n_i" class="input">AD:
+            <input type="date" id="d_a2n" />
+            <button id="button_a2n" onclick="v3();">GET NS</button>
           </div>
-          <div id="ad_to_ns_result">NS here</div>
+          <div id="a2n_r">NS here</div>
         </div>
       </div>
 
@@ -43,25 +45,25 @@
       <br class="lg-screen" />
 
       <h3>Solar NS/BS Date Converter</h3>
-      <div id="ns_bs_converter">
-        <div id="ns_to_bs">
-          <div id="ns_to_bs_input">NS:
-            <select id="select_year_ns_to_bs" onchange="w3();"></select>
-            <select id="select_month_ns_to_bs" onchange="w3();"></select>
-            <select id="select_date_ns_to_bs"></select>
-            <button id="button_ns_to_bs" onclick="M3();">GET BS</button>
+      <div id="nbc">
+        <div id="n2b">
+          <div id="n2b_i">NS:
+            <select id="select_yn2b" onchange="w3();"></select>
+            <select id="select_mn2b" onchange="w3();"></select>
+            <select id="select_dn2b"></select>
+            <button id="button_n2b" onclick="M3();">GET BS</button>
           </div>
-          <div id="ns_to_bs_result">BS here</div>
+          <div id="n2b_r">BS here</div>
         </div>
 
-        <div id="bs_to_ns">
-          <div id="bs_to_ns_input">BS:
-            <select id="select_year_bs_to_ns" onchange="g3();"></select>
-            <select id="select_month_bs_to_ns" onchange="g3();"></select>
-            <select id="select_date_bs_to_ns"></select>
-            <button id="button_bs_to_ns" onclick="J3();">GET NS</button>
+        <div id="b2n">
+          <div id="b2n_i">BS:
+            <select id="select_yb2n" onchange="g3();"></select>
+            <select id="select_mb2n" onchange="g3();"></select>
+            <select id="select_db2n"></select>
+            <button id="button_b2n" onclick="J3();">GET NS</button>
           </div>
-          <div id="bs_to_ns_result">NS here</div>
+          <div id="b2n_r">NS here</div>
         </div>
       </div>
 
@@ -70,22 +72,23 @@
         <br class="lg-screen" />
 
         <h3>BS/AD Date Converter</h3>
-        <div id="bs_ad_converter">
-          <div id="bs_to_ad">
-            <div id="bs_to_ad_input">BS:
-              <select id="select_year_bs_to_ad" onchange="g3();"></select>
-              <select id="select_month_bs_to_ad" onchange="g3();"></select>
-              <select id="select_date_bs_to_ad"></select>
-              <button id="button_bs_to_ad" onclick="A3();">GET AD</button>
+        <div id="bac">
+          <div id="b2a">
+            <div id="b2a_i">BS:
+              <select id="select_yb2a" onchange="g3();"></select>
+              <select id="select_mb2a" onchange="g3();"></select>
+              <select id="select_db2a"></select>
+              <button id="button_b2a" onclick="A3();">GET AD</button>
             </div>
-            <div id="bs_to_ad_result">AD here</div>
+            <div id="b2a_r">AD here</div>
           </div>
 
-          <div id="ad_to_bs">
-            <div id="ad_to_bs_input" class="input">AD: <input type="date" id="ad_date_to_bs" />
-              <button id="button_ad_to_bs" onclick="N3();">GET BS</button>
+          <div id="a2b">
+            <div id="a2b_i" class="input">AD:
+              <input type="date" id="d_a2b" />
+              <button id="button_a2b" onclick="N3();">GET BS</button>
             </div>
-            <div id="ad_to_bs_result">BS here</div>
+            <div id="a2b_r">BS here</div>
           </div>
         </div>
       </div>
@@ -95,7 +98,7 @@
     <br />
     <br class="lg-screen" />
 	
-	  <div class="disclaimer">
+	  <div class="d">
       <strong>DISCLAIMER</strong>
       <br />
       This converter is a personal hobby project. While I’ve done my best to ensure accuracy,
@@ -105,22 +108,13 @@
 	    Feedback, suggestions, and bug reports are always welcome!
     </div>
 
-    <!-- <div>
-      <a id="brihatcalendar"
-         href="https://calendar.brihatrb.com.np/">
-          &raquo; Brihat Calendar &laquo;
-      </a>
-    </div> -->
-
-    <!-- Custom Scripts -->
-    <!-- for topmost date display -->
     <script>
-      function showtime() {
+      function st() {
         let dt = new Date();
-        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
-        setTimeout("showtime()", 500);
+        document.getElementById("dt").innerHTML = dt.toLocaleTimeString();
+        setTimeout("st()", 500);
       }
-      showtime();
+      st();
     </script>
 
     <script src="./index.js"></script>
